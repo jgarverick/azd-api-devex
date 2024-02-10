@@ -40,3 +40,5 @@ echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.zshrc
 echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools' >> ~/.zshrc
 
 echo '[INFO] postCreateCommand.sh finished!'
+
+alias pcra

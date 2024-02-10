@@ -7,27 +7,23 @@ terraform {
     }
     azurecaf = {
       source  = "aztfmod/azurecaf"
-      version = "~>1.2.24"
+      version = ">=1.2.24"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "~>1.5.0"
+      version = ">2.0.0"
     }
   }
 }
 
-resource "azuread_application" "name" {
-  display_name            = "apim-devex-demo-auth"
+resource "azuread_application_registration" "name" {
+  display_name            = "apim-devex-demo-auth-azd"
   sign_in_audience        = "AzureADMyOrg"
   group_membership_claims = ["All"]
 }
 
-resource "azuread_application_password" "name" {
-  application_id = azuread_application.name.application_id
-}
-
 resource "azuread_application_redirect_uris" "name" {
-  application_id = azuread_application.name.application_id
+  application_id = azuread_application_registration.name.client_id
   redirect_uris = ["https://${var.apim_name}.developer.azure-api.net/signin",
     "https://${var.apim_name}.developer.azure-api.net",
     "https://authorization-manager.consent.azure-apim.net/redirect/apim/${var.apim_name}",

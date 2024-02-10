@@ -1,18 +1,18 @@
 # Configure desired versions of terraform, azurerm provider
 terraform {
-  required_version = ">= 1.1.7, < 2.0.0"
+  required_version = ">= 1.1.7"
   required_providers {
     azurerm = {
-      version = "~>3.47.0"
+      version = ">=3.47.0"
       source  = "hashicorp/azurerm"
     }
     azurecaf = {
       source  = "aztfmod/azurecaf"
-      version = "~>1.2.24"
+      version = ">=1.2.24"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "~>1.5.0"
+      version = ">=1.5.0"
     }
   }
 }

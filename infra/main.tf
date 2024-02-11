@@ -32,7 +32,7 @@ module "apim" {
   tags                      = var.tags
 }
 
-module "aad" {
-  source    = "./core/security/aad"
-  apim_name = module.apim.APIM_SERVICE_NAME
-}
+# module "aad" {
+#   source    = "./core/security/aad"
+#   apim_name = module.apim.APIM_SERVICE_NAME
+# }

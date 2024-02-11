@@ -1,3 +1,8 @@
+data "azurerm_resource_group" "rg" {
+  name = local.rg_name
+  location = var.location
+}
+
 resource "azurecaf_name" "apim_name" {
   resource_type = "azurerm_api_management"
   random_length = 0
